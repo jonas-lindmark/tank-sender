@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import json
 
 import paho.mqtt.client as paho
 import time
@@ -36,9 +37,9 @@ def read_temp(sensor):
 
 
 def main():
-    temp_readings = dict([(label, read_temp(sensor)) for label, sensor in sensors])
+    temp_readings = dict([(label, read_temp(sensor)) for label, sensor in sensors.items()])
     print(temp_readings)
-    post_mqtt_message(temp_readings)
+    post_mqtt_message(json.dumps(temp_readings))
 
 
 if __name__ == '__main__':
