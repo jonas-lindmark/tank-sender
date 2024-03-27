@@ -20,7 +20,8 @@ cd tank-sender
 Create a python virtual environment and install dependencies.
 ```shell
 python3 -m venv ./venv
-venv/bin/pip3 install -r requirements.txt
+source venv/bin/activate
+pip3 install -r requirements.txt
 ```
 
 ### Configure script
