@@ -9,5 +9,5 @@ export MQTT_HOST="mqtt-host.example.com"
 export MQTT_PORT="1883"
 export TEMP_SENSORS="Label 1:SENSOR_ID_1, Label 2:SENSOR_ID2"
 
-cd "$TANK_SENDER_DIR"
-venv/bin/python3 tank-sender.py
+cd "$TANK_SENDER_DIR" || exit 1
+python3 tank-sender.py
